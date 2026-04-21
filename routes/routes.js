@@ -64,12 +64,13 @@ router.get('/', async (req, res) => {
 // Insert user into database
 router.post('/add', upload, async (req, res) => {
     try {
+        // Add in new bug for Part 2
         const user = new User({
-            name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
-            image: req.file ? req.file.filename : 'user_unknown.png'
-        });
+          name: req.body.email,
+          email: req.body.name,
+          phone: req.body.phone,
+          image: req.file ? req.file.filename : 'user_unknown.png'
+      });
         await user.save();
         req.session.message = {
             type: 'success',
