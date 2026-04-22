@@ -9,7 +9,6 @@ COPY package*.json ./
 
 # Install app dependencies
 RUN npm install
-RUN this-command-does-not-exist
 
 # Bundle app source
 COPY . .
