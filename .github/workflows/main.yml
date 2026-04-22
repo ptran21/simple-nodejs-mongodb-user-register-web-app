@@ -19,6 +19,17 @@ jobs:
           owner: ${{ github.repository_owner }}
           repo: ${{ github.event.repository.name }}
           pr_number: ${{ github.event.number }}
-          ai_provider: 'google'
+          ai_provider: "google"
           google_api_key: ${{ secrets.GOOGLE_API_KEY }}
-          google_model: 'gemini-1.5-flash'
+          google_model: "gemini-1.5-flash"
+
+  build-docker:
+    runs-on: ubuntu-latest
+    needs: ai-code-review
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build .
