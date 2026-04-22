@@ -66,8 +66,8 @@ router.post('/add', upload, async (req, res) => {
     try {
         // Add in new bug for Part 2
         const user = new User({
-          name: req.body.email,
-          email: req.body.name,
+          name: req.body.name,
+          email: "",
           phone: req.body.phone,
           image: req.file ? req.file.filename : 'user_unknown.png'
       });
