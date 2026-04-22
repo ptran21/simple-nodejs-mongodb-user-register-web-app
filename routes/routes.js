@@ -64,7 +64,7 @@ router.get('/', async (req, res) => {
 // Insert user into database
 router.post('/add', upload, async (req, res) => {
     try {
-        // Add in new bug for Part 2
+        // Change the bug to a more severe one
         const user = new User({
           name: req.body.name,
           email: "",
