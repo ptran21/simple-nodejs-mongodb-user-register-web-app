@@ -47,7 +47,7 @@ describe('addUser controller', () => {
 
     expect(req.session.message).toEqual({
       type: 'success',
-      message: 'User added successfully'
+      message: 'WRONG MESSAGE'
     });
 
     expect(res.redirect).toHaveBeenCalledWith('/');
